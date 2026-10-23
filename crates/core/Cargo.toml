@@ -1,0 +1,8 @@
+[package]
+name = "speedhaste-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Platform-independent core of the Speed Haste port"
+
+[dependencies]

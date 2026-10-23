@@ -1,0 +1,14 @@
+[package]
+name = "speedhaste"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Speed Haste port — native SDL3 frontend"
+
+[dependencies]
+speedhaste-core = { path = "../core" }
+speedhaste-gpu = { path = "../gpu" }
+sdl3 = { version = "0.20", features = ["raw-window-handle"] }
+wgpu = { version = "30", default-features = false, features = ["wgsl", "std", "vulkan", "gles", "parking_lot"] }
+raw-window-handle = "0.6"
+tungstenite = { version = "0.30", features = ["rustls-tls-webpki-roots"] }

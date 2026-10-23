@@ -1,0 +1,31 @@
+[workspace]
+resolver = "3"
+members = ["crates/core", "crates/gpu", "crates/native", "crates/relay", "crates/web"]
+default-members = ["crates/core", "crates/gpu", "crates/native", "crates/relay", "crates/web"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[profile.dev]
+# The software renderer is unbearably slow unoptimized.
+opt-level = 1
+# The game logic is a port of C that relies on 32-bit wraparound everywhere.
+overflow-checks = false
+
+# Line tables only: the workspace lives on a small tmpfs.
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+opt-level = 3
+debug = false
+
+[profile.release]
+debug = 1
+
+# dx build --release uses this for the web: no debug info in the .wasm.
+[profile.wasm-release]
+inherits = "release"
+debug = false
+strip = "debuginfo"

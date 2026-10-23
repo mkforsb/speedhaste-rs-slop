@@ -1,0 +1,5 @@
+[application]
+name = "speedhaste-web"
+
+[web.app]
+title = "Speed Haste"

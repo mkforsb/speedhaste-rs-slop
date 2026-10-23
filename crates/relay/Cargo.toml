@@ -1,0 +1,10 @@
+[package]
+name = "speedhaste-relay"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Speed Haste port — WebSocket relay for network races"
+
+[dependencies]
+speedhaste-core = { path = "../core" }
+tungstenite = "0.30"

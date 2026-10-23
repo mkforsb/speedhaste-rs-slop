@@ -1,0 +1,24 @@
+[package]
+name = "speedhaste-web"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Speed Haste port — web frontend (Dioxus)"
+
+[dependencies]
+speedhaste-core = { path = "../core" }
+speedhaste-gpu = { path = "../gpu" }
+wgpu = { version = "30", default-features = false, features = ["wgsl", "std", "webgl"] }
+dioxus = { version = "0.7", features = ["web"] }
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = [
+    "Window", "Document", "Element", "HtmlCanvasElement", "CanvasRenderingContext2d", "ImageData",
+    "KeyboardEvent", "Performance", "Storage", "Location", "HtmlElement",
+    "AudioContext", "AudioContextState", "AudioDestinationNode", "AudioNode", "AudioBuffer",
+    "ScriptProcessorNode", "AudioProcessingEvent", "BaseAudioContext",
+    "Navigator", "Gamepad", "GamepadButton", "console",
+    "WebSocket", "MessageEvent", "BinaryType", "Event",
+    "PointerEvent", "MouseEvent", "UiEvent", "InputEvent", "HtmlInputElement", "MediaQueryList", "DomTokenList",
+] }

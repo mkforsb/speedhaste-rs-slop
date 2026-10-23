@@ -1,0 +1,18 @@
+# Copyrighted game data / references — never commit
+/refs/
+*.JCL
+*.jcl
+# Extracted assets and RE databases
+/re/jcl/
+/re/out/
+/re/ghidra/
+# Third-party tools
+/tools/
+# Build output
+/target/
+/dist/
+node_modules/
+/re/dos/
+
+# ...except the shareware release, which is freely copyable and built in
+!/shareware/SPEEDH.JCL
